@@ -175,7 +175,7 @@
                 streams_width = element.find(".streams").outerWidth() + 2;
 
             setTimeout(function(){
-                element.find(".events").animate({
+                element.find(".events").transit({
                     scrollLeft: "+="+ (interval.offsetLeft - streams_width)
                 }, speed, function(){
                     that._afterSlide();
@@ -189,7 +189,7 @@
             var that = this, element = this.element, groups = element.find(".event-group"), streams_width = element.find(".streams").outerWidth() + 2;
 
             setTimeout(function(){
-                element.find(".events").animate({
+                element.find(".events").transit({
                     scrollLeft: "+="+ (groups[group-1].offsetLeft - streams_width)
                 }, speed, function(){
                     that._afterSlide();

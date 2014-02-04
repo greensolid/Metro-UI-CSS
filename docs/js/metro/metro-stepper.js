@@ -40,7 +40,7 @@
 
             $.each(steps, function(i, step){
                 var left = i == 0 ? 0 : (element_width - step_width)/steps_length * i;
-                $(step).animate({
+                $(step).transit({
                     left: left
                 });
             });
