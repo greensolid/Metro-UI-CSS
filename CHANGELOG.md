@@ -1,3 +1,15 @@
+## Version 2.0.30
+
+### Changes:
+- add fr locale
+- add nl locale
+
+## Version 2.0.29
+
+### Changes:
+- bugs fixed
+- Nuget update
+
 ## Version 2.0.28
 
 ### Changes:

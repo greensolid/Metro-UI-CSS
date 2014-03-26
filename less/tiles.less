@@ -132,6 +132,10 @@
     padding-top: 40px;
     position: relative;
 
+    &.one {
+        width: @tileGroupSize;
+    }
+
     &.two, &.double {
         width: @tileGroupDoubleSize;
     }
@@ -254,7 +258,6 @@
                 line-height: @tileIconSize;
                 height: @tileIconSize;
                 width: @tileIconSize;
-                position: relative;
                 font-size: @tileIconSizeFont;
                 color: @white;
                 text-align: center;
@@ -406,7 +409,6 @@
                 line-height: @tileIconSize/1.5;
                 height: @tileIconSize/1.5;
                 width: @tileIconSize/1.5;
-                position: relative;
                 font-size: @tileIconSizeFont/1.5;
                 color: @white;
                 text-align: center;
@@ -482,4 +484,116 @@
             }
         }
     }
+}
+
+
+@rotate: 0.138372rad;
+
+[class*=tile-transform-] {
+    -webkit-transition: all 0.22s;
+    transition: all 0.22s;
+}
+
+.transY(@perspective: 500px, @rot: @rotate){
+    -webkit-transform: perspective( @perspective ) rotateY( @rot );
+    -moz-transform: perspective( @perspective ) rotateY( @rot );
+    -ms-transform: perspective( @perspective ) rotateY( @rot );
+    -o-transform: perspective( @perspective ) rotateY( @rot );
+    transform: perspective( @perspective ) rotateY( @rot );
+}
+
+.transX(@perspective: 500px, @rot: @rotate){
+    -webkit-transform: perspective( @perspective ) rotateX( @rot );
+    -moz-transform: perspective( @perspective ) rotateX( @rot );
+    -ms-transform: perspective( @perspective ) rotateX( @rot );
+    -o-transform: perspective( @perspective ) rotateX( @rot );
+    transform: perspective( @perspective ) rotateX( @rot );
+}
+
+// right
+.tile-transform-right {
+    .transformOrigin(left 50%);
+    .transY(500px, @rotate);
+}
+
+.tile.double.tile-transform-right {
+    .transY(500px, @rotate/2);
+}
+
+.tile.triple.tile-transform-right {
+    .transY(500px, @rotate/3);
+}
+
+.tile.quadro.tile-transform-right {
+    .transY(500px, @rotate/4);
+}
+
+.tile.half.tile-transform-right {
+    .transY(500px, @rotate*2);
+}
+
+// left
+.tile-transform-left {
+    .transformOrigin(right 50%);
+    .transY(500px, -@rotate);
+}
+
+.tile.double.tile-transform-left {
+    .transY(500px, -@rotate/2);
+}
+
+.tile.triple.tile-transform-left {
+    .transY(500px, -@rotate/3);
+}
+
+.tile.quadro.tile-transform-left {
+    .transY(500px, -@rotate/4);
+}
+
+.tile.half.tile-transform-left {
+    .transY(500px, -@rotate*2);
+}
+
+// top
+.tile-transform-top {
+    .transformOrigin(50% bottom);
+    .transX(500px, @rotate);
+}
+
+.tile.double.tile-transform-top {
+    .transX(500px, @rotate/2);
+}
+
+.tile.triple.tile-transform-top {
+    .transX(500px, @rotate/3);
+}
+
+.tile.quadro.tile-transform-top {
+    .transX(500px, @rotate/4);
+}
+
+.tile.half.tile-transform-top {
+    .transX(500px, @rotate*2);
+}
+
+// bottom
+.tile-transform-bottom {
+    .transformOrigin(50% top);
+    .transX(500px, -@rotate);
+}
+
+.tile.double.tile-transform-bottom {
+    .transX(500px, -@rotate/2);
+}
+
+.tile.triple.tile-transform-bottom {
+    .transX(500px, -@rotate/3);
+}
+
+.tile.quadro.tile-transform-bottom {
+    .transX(500px, -@rotate/4);
+}
+
+.tile.half.tile-transform-bottom {
+    .transX(500px, -@rotate*2);
 }
